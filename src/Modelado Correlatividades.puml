@@ -1,0 +1,21 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+Alumno --> "*"Materias
+Inscripciones o--"*" Materias
+Inscripciones o-- Alumno
+Materias --> "*"Materias
+
+
+class Inscripciones {
+- alumno: Alumno
+- materias: List<Materias>
++ aprobada(): boolean
+}
+
+
+class Alumno {
+- aprobadas: List<Materias>
+}
+
+@enduml
